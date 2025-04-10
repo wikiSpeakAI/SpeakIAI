@@ -19,6 +19,7 @@ class HomeSpeakViewController:  BaseController, ViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
+        welcomeMenu.delegate = self
         setup()
         presenter?.fetchData()
     }
@@ -40,6 +41,7 @@ class HomeSpeakViewController:  BaseController, ViewProtocol {
     
     lazy var welcomeMenu = { [weak self] in
         var welcomeMenu = ContainerHomeCollectionView()
+        welcomeMenu.delegate = self
         welcomeMenu.translatesAutoresizingMaskIntoConstraints = false
         return welcomeMenu
     }()
@@ -61,6 +63,15 @@ extension HomeSpeakViewController: HomeSpeakViewControllerProtocol {
     func loadData(LearnidMethod: [ LearningMethod]?) {
         welcomeMenu.dataSource = LearnidMethod
     }
+    
+    
+}
+
+extension HomeSpeakViewController : ContainerHomeCollectionViewProtocol {
+    func didSelectFlow(flow: LearningMethod) {
+        presenter?.gotoFlow(flow: flow )
+    }
+
     
     
 }

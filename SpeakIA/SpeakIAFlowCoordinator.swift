@@ -12,14 +12,18 @@ class SpeakIAFlowCoordinator: RouterProtocol{
     var navigation: UINavigationController?
     var rootView: UIViewController?
     
-    private var navigationController: UINavigationController!
     
     
     public func start(navigation: UINavigationController?) -> UIViewController {
         // validate if account premium o free
+        self.navigation = navigation
         let viewController = HomeSpeakRouter()
-        let vc = viewController.start(navigation: navigationController)
+        let vc = viewController.start(navigation: navigation)
         
         return vc
+    }
+    
+    deinit {
+        print("deleted SpeakIAFlowCoordinator")
     }
 }

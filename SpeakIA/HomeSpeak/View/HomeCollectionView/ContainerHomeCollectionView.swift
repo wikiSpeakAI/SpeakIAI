@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol ContainerHomeCollectionViewProtocol: AnyObject {
+    func didSelectFlow(flow: LearningMethod)
+}
+
 
 class ContainerHomeCollectionView: UIView {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var CollectionView: UICollectionView!
+    weak var delegate: ContainerHomeCollectionViewProtocol?
     let itemsPerRow: CGFloat = 2
     
     var dataSource: [LearningMethod]? {
@@ -83,6 +88,14 @@ extension ContainerHomeCollectionView : UICollectionViewDataSource, UICollection
        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("se dio clic a", dataSource?[indexPath.row].title)
+        guard let data = dataSource?[indexPath.row] else {return}
+        delegate?.didSelectFlow(flow: data)
+    }
+    
+    
     
 
 }

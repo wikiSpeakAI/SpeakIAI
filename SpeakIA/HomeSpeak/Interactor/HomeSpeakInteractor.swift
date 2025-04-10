@@ -8,7 +8,7 @@ protocol HomeSpeakInteractorProtocol: AnyObject {
 }
 
 class HomeSpeakInteractor: InteractorProtocol {
-    var presenter: HomeSpeakPresenterProtocol?
+    weak var presenter: HomeSpeakPresenterProtocol?
     
 }
 

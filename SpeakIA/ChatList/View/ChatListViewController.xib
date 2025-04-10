@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatListViewController" customModule="SpeakIA" customModuleProvider="target">
+            <connections>
+                <outlet property="chatListContent" destination="Ilf-2j-ydr" id="sJw-Ue-cbn"/>
+                <outlet property="headerContent" destination="RSo-JD-duo" id="S3V-wA-N6a"/>
+                <outlet property="searchContent" destination="BPF-fH-goe" id="0Zb-G6-C5E"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Yps-zg-Ubl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSo-JD-duo">
+                    <rect key="frame" x="0.0" y="48" width="414" height="200"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="qLd-K5-oMb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPF-fH-goe">
+                    <rect key="frame" x="0.0" y="248" width="414" height="50"/>
+                    <color key="backgroundColor" systemColor="systemMintColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="8Jx-6u-cD8"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ilf-2j-ydr">
+                    <rect key="frame" x="0.0" y="298" width="414" height="564"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ilf-2j-ydr" firstAttribute="top" secondItem="BPF-fH-goe" secondAttribute="bottom" id="27Q-Pb-JGg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BPF-fH-goe" secondAttribute="trailing" id="3ZA-vg-blz"/>
+                <constraint firstItem="RSo-JD-duo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5AN-7O-5Xe"/>
+                <constraint firstItem="BPF-fH-goe" firstAttribute="top" secondItem="RSo-JD-duo" secondAttribute="bottom" id="C3Z-zu-Za8"/>
+                <constraint firstItem="Ilf-2j-ydr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GQD-Ae-p6d"/>
+                <constraint firstItem="BPF-fH-goe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="apj-uh-1Mf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RSo-JD-duo" secondAttribute="trailing" id="cS2-TM-cic"/>
+                <constraint firstItem="RSo-JD-duo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dfG-O2-g69"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ilf-2j-ydr" secondAttribute="trailing" id="lgt-f8-1Aa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ilf-2j-ydr" secondAttribute="bottom" id="vwM-hc-xxf"/>
+            </constraints>
+            <point key="canvasLocation" x="-66" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

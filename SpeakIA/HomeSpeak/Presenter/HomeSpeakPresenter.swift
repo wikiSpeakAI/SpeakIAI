@@ -4,18 +4,24 @@
 //
 //  Created by William Brando Estrada Tepec on 4/8/25.
 //
+import UIKit
+
 protocol HomeSpeakPresenterProtocol: AnyObject {
     func fetchData()
+    func gotoFlow(flow: LearningMethod)
 }
 
 class HomeSpeakPresenter: PresenterProtocol {
-    var view: HomeSpeakViewControllerProtocol?
+    weak var view: HomeSpeakViewControllerProtocol?
     var router: HomeSpeakRouterProtocol?
     var interactor: HomeSpeakInteractorProtocol?
     
     var sessionTimer: Timer?
-    private let secondsToEvent: Int = 15
+    private let secondsToEvent: Int = 3
 
+    deinit {
+        print("deleted HomeSpeakPresenter")
+    }
     
     let dataDummy: [LearningMethod] = [
         LearningMethod(name: "speakAI", img: "speakAI", title: "Habla con MelissIA", description: "Habla con IA para mejorar tu lenguaje", typeMethod: .speakAI),
@@ -23,6 +29,10 @@ class HomeSpeakPresenter: PresenterProtocol {
 }
 
 extension HomeSpeakPresenter: HomeSpeakPresenterProtocol {
+    func gotoFlow(flow: LearningMethod) {
+        router?.gotoFlowRouter(flow: flow)
+    }
+    
     func fetchData() {
         sessionTimer = Timer.scheduledTimer(timeInterval: TimeInterval(secondsToEvent), target: self, selector: #selector(validateSessionData), userInfo: nil, repeats: false)
     }

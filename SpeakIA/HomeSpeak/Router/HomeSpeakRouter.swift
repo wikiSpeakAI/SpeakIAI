@@ -6,7 +6,7 @@
 //
 import UIKit
 protocol HomeSpeakRouterProtocol: AnyObject {
-    
+    func gotoFlowRouter(flow: LearningMethod)
 }
 
 class HomeSpeakRouter: RouterProtocol {
@@ -19,6 +19,7 @@ class HomeSpeakRouter: RouterProtocol {
         let presenter = HomeSpeakPresenter()
         let interactor = HomeSpeakInteractor()
         
+        self.navigation = navigation
         view.presenter = presenter
         presenter.view = view
         presenter.router = self
@@ -27,8 +28,26 @@ class HomeSpeakRouter: RouterProtocol {
         return view
     }
     
+    deinit {
+        print("Deleted HomeSpeakRouter" )
+    }
     
 }
 extension HomeSpeakRouter: HomeSpeakRouterProtocol {
+    func gotoFlowRouter(flow: LearningMethod) {
+
+        switch flow.typeMethod {
+        case .chatWithAI:
+            print("dede abrir ChatListRouter navigation: ", navigation)
+            let router = ChatListRouter()
+            let vc = router.start(navigation: navigation)
+            print("dede abrir ChatListRouter vc: ", vc)
+
+            navigation?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+    }
+    
     
 }
