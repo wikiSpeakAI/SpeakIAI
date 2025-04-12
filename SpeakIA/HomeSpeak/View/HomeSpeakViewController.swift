@@ -47,13 +47,14 @@ class HomeSpeakViewController:  BaseController, ViewProtocol {
     }()
     
     func setup() {
-        self.contetWelcomenMenu.addSubview(welcomeMenu)
+        contetWelcomenMenu.addSubView(viewChild: welcomeMenu)
+    /*    self.contetWelcomenMenu.addSubview(welcomeMenu)
         NSLayoutConstraint.activate([
             welcomeMenu.leadingAnchor.constraint(equalTo: contetWelcomenMenu.leadingAnchor),
             welcomeMenu.trailingAnchor.constraint(equalTo: contetWelcomenMenu.trailingAnchor),
             welcomeMenu.topAnchor.constraint(equalTo: contetWelcomenMenu.topAnchor),
             welcomeMenu.bottomAnchor.constraint(equalTo: contetWelcomenMenu.bottomAnchor)
-        ])
+        ])*/
         //welcomeMenu.configData("Bienvenido")
     }
     

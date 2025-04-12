@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatListViewController" customModule="SpeakIA" customModuleProvider="target">
             <connections>
                 <outlet property="chatListContent" destination="Ilf-2j-ydr" id="sJw-Ue-cbn"/>
+                <outlet property="constraintHeaderHeight" destination="qLd-K5-oMb" id="sA9-Ej-Rzb"/>
                 <outlet property="headerContent" destination="RSo-JD-duo" id="S3V-wA-N6a"/>
                 <outlet property="searchContent" destination="BPF-fH-goe" id="0Zb-G6-C5E"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Yps-zg-Ubl"/>
@@ -24,8 +25,17 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSo-JD-duo">
                     <rect key="frame" x="0.0" y="48" width="414" height="200"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OYT-CH-2qT">
+                            <rect key="frame" x="167" y="60.5" width="80" height="79"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
+                        <constraint firstItem="OYT-CH-2qT" firstAttribute="height" secondItem="RSo-JD-duo" secondAttribute="height" multiplier="0.4" id="1oz-Y2-boB"/>
+                        <constraint firstItem="OYT-CH-2qT" firstAttribute="width" secondItem="RSo-JD-duo" secondAttribute="height" multiplier="2:5" id="9Mz-XD-PLj"/>
+                        <constraint firstItem="OYT-CH-2qT" firstAttribute="centerX" secondItem="RSo-JD-duo" secondAttribute="centerX" id="TbH-N8-JDf"/>
+                        <constraint firstItem="OYT-CH-2qT" firstAttribute="centerY" secondItem="RSo-JD-duo" secondAttribute="centerY" id="mPg-ck-F3j"/>
                         <constraint firstAttribute="height" constant="200" id="qLd-K5-oMb"/>
                     </constraints>
                 </view>
@@ -59,14 +69,15 @@
         </view>
     </objects>
     <resources>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

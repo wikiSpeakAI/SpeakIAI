@@ -17,7 +17,7 @@ class HomeSpeakPresenter: PresenterProtocol {
     var interactor: HomeSpeakInteractorProtocol?
     
     var sessionTimer: Timer?
-    private let secondsToEvent: Int = 3
+    private let secondsToEvent: Int = 1
 
     deinit {
         print("deleted HomeSpeakPresenter")

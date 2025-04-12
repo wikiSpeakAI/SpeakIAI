@@ -15,5 +15,15 @@ extension UIView {
         
     }
     
+    func addSubView(viewChild: UIView) {
+        self.addSubview(viewChild)
+        NSLayoutConstraint.activate([
+            viewChild.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            viewChild.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            viewChild.topAnchor.constraint(equalTo: self.topAnchor),
+            viewChild.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+    
 }
 
