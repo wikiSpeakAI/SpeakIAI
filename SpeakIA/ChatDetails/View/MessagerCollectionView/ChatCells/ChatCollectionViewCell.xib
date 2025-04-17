@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatCollectionViewCell" customModule="SpeakIA" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="S3H-7y-mgc" customClass="ChatCollectionViewCell" customModule="SpeakIA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="202"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WUT-CQ-cPH">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="202"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbx-K8-nG3">
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="202"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPF-9Q-aeb">
+                                <rect key="frame" x="0.0" y="0.0" width="415" height="202"/>
+                                <mutableString key="text">Hola este es un ejmeplo de labelHola este es un ejmeplo de label, es verdad que crece?, parece que si esta creciendoSeguira creciendoHola este es un ejmeplo de labelHola este es un ejmeplo de label, es verdad que crece?, parece que si esta creciendoSeguira creciendoHola este es un ejmeplo de labelHola este es un ejmeplo de label, es verdad que crece?, parece que si esta creciendoSeguira creciendoHola este es un ejmeplo de labelHola este es un ejmeplo de label, es verdad que crece?, parece que si esta creciendoSeguira creciendo</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="blue_secundary_speakIA"/>
+                        <constraints>
+                            <constraint firstItem="cPF-9Q-aeb" firstAttribute="top" secondItem="cbx-K8-nG3" secondAttribute="top" id="IHV-5a-Soz"/>
+                            <constraint firstItem="cPF-9Q-aeb" firstAttribute="leading" secondItem="cbx-K8-nG3" secondAttribute="leading" id="a0q-aC-pol"/>
+                            <constraint firstAttribute="bottom" secondItem="cPF-9Q-aeb" secondAttribute="bottom" id="ihm-s6-oLe"/>
+                            <constraint firstAttribute="trailing" secondItem="cPF-9Q-aeb" secondAttribute="trailing" id="ppB-JR-PTJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cbx-K8-nG3" secondAttribute="trailing" id="NBB-q2-EGM"/>
+                    <constraint firstItem="cbx-K8-nG3" firstAttribute="top" secondItem="WUT-CQ-cPH" secondAttribute="top" id="WBq-Zj-3z4"/>
+                    <constraint firstAttribute="bottom" secondItem="cbx-K8-nG3" secondAttribute="bottom" id="qyf-2U-jVy"/>
+                    <constraint firstItem="cbx-K8-nG3" firstAttribute="leading" secondItem="WUT-CQ-cPH" secondAttribute="leading" id="svE-hw-0gY"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <color key="backgroundColor" name="blue_secundary_speakIA"/>
+            <size key="customSize" width="415" height="202"/>
+            <connections>
+                <outlet property="constraintsLeft" destination="svE-hw-0gY" id="rNt-pi-0GK"/>
+                <outlet property="constraintsRight" destination="NBB-q2-EGM" id="gfo-y5-n3R"/>
+                <outlet property="contentMessageView" destination="cbx-K8-nG3" id="Gvr-l7-e9w"/>
+                <outlet property="messageLabel" destination="cPF-9Q-aeb" id="ytF-K0-ZgV"/>
+            </connections>
+            <point key="canvasLocation" x="1167.175572519084" y="21.126760563380284"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="blue_secundary_speakIA">
+            <color red="0.18823529411764706" green="0.62745098039215685" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

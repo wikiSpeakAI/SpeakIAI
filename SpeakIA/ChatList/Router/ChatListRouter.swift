@@ -7,7 +7,7 @@
 import UIKit
 
 protocol ChatListRouterProtocol: AnyObject {
-    
+    func gotoChatFlow(_ data: [UserChat]?)
 }
 
 class ChatListRouter: RouterProtocol {
@@ -36,5 +36,12 @@ class ChatListRouter: RouterProtocol {
     
 }
 extension ChatListRouter: ChatListRouterProtocol {
+    func gotoChatFlow(_ data: [UserChat]?) {
+        var router = ChatRouter(data: data)
+        var vc = router.start(navigation: navigation)
+        
+        navigation?.pushViewController(vc, animated: true)
+    }
+    
     
 }

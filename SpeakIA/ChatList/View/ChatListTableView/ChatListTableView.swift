@@ -17,6 +17,8 @@ protocol ChatListTableViewDelegate :AnyObject {
     
     func innerTableViewDidScroll(withDistance scrollDistance: CGFloat)
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
+    
+    func chatDidSelected(dta : [UserChat])
 }
 
 
@@ -29,7 +31,7 @@ class ChatListTableView: UIView {
     var lastContentOffset = CGPoint.zero
     private var drawDirection: DragDirection = .Up
 
-    var dataSource: [UserChat] = [UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate, necesito que traigas las verduras y los vegetales para cocinar", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes")]
+    var dataSource: [UserChat] = [UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate, necesito que traigas las verduras y los vegetales para cocinar", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada TepecWilliam Brando Estrada Tepec William Brando Estrada Tepec William Brando Estrada Tepec William Brando Estrada Tepec este es un mensaje", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes"),UserChat(id: "123" , name: "William Brando Estrada Tepec", avatar: "",lastMessage: "ya vienes apurate", lastMessageDate: "Viernes")]
     
     
     private struct Constants {
@@ -84,6 +86,10 @@ extension ChatListTableView:  UITableViewDataSource {
         cell.setData(data: dataSource[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.chatDidSelected(dta: dataSource)
     }
     
     

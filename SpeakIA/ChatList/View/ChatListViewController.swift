@@ -102,6 +102,10 @@ extension ChatListViewController: ChatListViewProtocol {}
 
 
 extension ChatListViewController: ChatListTableViewDelegate {
+    func chatDidSelected(dta: [UserChat]) {
+        presenter?.selectedChat(userChat: dta)
+    }
+    
     var currentHeaderHeight: CGFloat {
         return constraintHeaderHeight.constant
     }
