@@ -16,8 +16,13 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
+  desc "Run wito fastlane Test"
+  lane :test do
+    scan(
+      scheme: "SpeakIAUnitTesting",
+      clean: true,
+      only_testing: ['SpeakIAUnitTesting']
+    )
     # add actions here: https://docs.fastlane.tools/actions
   end
 end
