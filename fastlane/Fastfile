@@ -19,7 +19,10 @@ platform :ios do
   desc "Run wito fastlane Test"
   lane :test do
     scan(
-      scheme: "SpeakIA"
+      scheme: "SpeakIA",
+      only_testing: ["SpeakIAUnitTest"],
+      clean: true,
+      destination: "platform=iOS Simulator,name=iPhone 16 Pro"
     )
     # add actions here: https://docs.fastlane.tools/actions
   end

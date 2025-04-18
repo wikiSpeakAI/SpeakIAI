@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "815D7300-5E40-49D9-8440-80D81E07E437",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SpeakIA.xcodeproj",
+        "identifier" : "5C6A2D192DB220DE00FE3199",
+        "name" : "SpeakIAUnitTest"
+      }
+    }
+  ],
+  "version" : 1
+}

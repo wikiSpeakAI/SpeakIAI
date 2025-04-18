@@ -1,14 +1,13 @@
 //
-//  SpeakIAUnitTesting.swift
-//  SpeakIAUnitTesting
+//  SpeakIAUnitTest.swift
+//  SpeakIAUnitTest
 //
 //  Created by William Brando Estrada Tepec on 4/17/25.
 //
 
 import XCTest
-@testable import SpeakIAUnitTesting
 
-final class SpeakIAUnitTesting: XCTestCase {
+final class SpeakIAUnitTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,13 +27,7 @@ final class SpeakIAUnitTesting: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
-    func test_SpeakIAUnitTesting_Example() throws {
-        print("Haciendo pruebas unitarias wito SpeakIAUnitTesting")
+        print("we are here to test performance wito")
     }
 
 }
