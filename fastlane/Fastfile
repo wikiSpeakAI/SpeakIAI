@@ -19,7 +19,7 @@ platform :ios do
   desc "Run wito fastlane Test"
   lane :test do
     scan(
-      scheme: "SpeakIAUnitTesting",
+      scheme: "SpeakIA",
       clean: true,
       only_testing: ['SpeakIAUnitTesting']
     )
