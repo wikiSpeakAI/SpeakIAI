@@ -19,11 +19,11 @@ jobs:
 
   test: 
     macos:
-      xcode: 16.0.0
+      xcode: 16.0
 
     steps: 
       - checkout
-      - run: fastlane scan
+      - run: fastlane test
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
