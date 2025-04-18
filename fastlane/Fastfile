@@ -20,8 +20,7 @@ platform :ios do
   lane :test do
     scan(
       scheme: "SpeakIA",
-      clean: true,
-      only_testing: ['SpeakIAUnitTesting']
+      clean: true
     )
     # add actions here: https://docs.fastlane.tools/actions
   end
