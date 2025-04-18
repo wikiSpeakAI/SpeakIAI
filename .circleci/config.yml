@@ -19,7 +19,7 @@ jobs:
 
   test: 
     macos:
-      xcode: 15.2.0
+      xcode: 16.0.0
 
     steps: 
       - checkout
