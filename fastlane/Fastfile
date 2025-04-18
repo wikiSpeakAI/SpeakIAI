@@ -20,7 +20,9 @@ platform :ios do
   lane :test do
     scan(
       scheme: "SpeakIA",
-      clean: true
+      clean: true,
+      only_testing: ["SpeakIAUnitTesting"],
+      destination: "platform=iOS Simulator,name=iPhone 14"
     )
     # add actions here: https://docs.fastlane.tools/actions
   end
