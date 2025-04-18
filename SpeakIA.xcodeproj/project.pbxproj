@@ -6,7 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5C6A2C3B2DB0A9FD00FE3199 /* SpeakIA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8AF72F2DA4F1220013728A /* SpeakIA.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C6A2C3C2DB0A9FD00FE3199 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8AF7262DA4F1220013728A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C8AF72E2DA4F1220013728A;
+			remoteInfo = SpeakIA;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5C6A2C372DB0A9FD00FE3199 /* SpeakIAUnitTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakIAUnitTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8AF72F2DA4F1220013728A /* SpeakIA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpeakIA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -21,6 +36,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5C6A2C382DB0A9FD00FE3199 /* SpeakIAUnitTesting */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SpeakIAUnitTesting;
+			sourceTree = "<group>";
+		};
 		5C8AF7312DA4F1220013728A /* SpeakIA */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -32,6 +52,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C6A2C342DB0A9FD00FE3199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C6A2C3B2DB0A9FD00FE3199 /* SpeakIA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C8AF72C2DA4F1220013728A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				5C8AF7312DA4F1220013728A /* SpeakIA */,
+				5C6A2C382DB0A9FD00FE3199 /* SpeakIAUnitTesting */,
 				5C8AF7302DA4F1220013728A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				5C8AF72F2DA4F1220013728A /* SpeakIA.framework */,
+				5C6A2C372DB0A9FD00FE3199 /* SpeakIAUnitTesting.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +101,29 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5C6A2C362DB0A9FD00FE3199 /* SpeakIAUnitTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C6A2C402DB0A9FD00FE3199 /* Build configuration list for PBXNativeTarget "SpeakIAUnitTesting" */;
+			buildPhases = (
+				5C6A2C332DB0A9FD00FE3199 /* Sources */,
+				5C6A2C342DB0A9FD00FE3199 /* Frameworks */,
+				5C6A2C352DB0A9FD00FE3199 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C6A2C3D2DB0A9FD00FE3199 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5C6A2C382DB0A9FD00FE3199 /* SpeakIAUnitTesting */,
+			);
+			name = SpeakIAUnitTesting;
+			packageProductDependencies = (
+			);
+			productName = SpeakIAUnitTesting;
+			productReference = 5C6A2C372DB0A9FD00FE3199 /* SpeakIAUnitTesting.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5C8AF72E2DA4F1220013728A /* SpeakIA */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C8AF7372DA4F1220013728A /* Build configuration list for PBXNativeTarget "SpeakIA" */;
@@ -101,8 +154,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					5C6A2C362DB0A9FD00FE3199 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					5C8AF72E2DA4F1220013728A = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -123,11 +180,19 @@
 			projectRoot = "";
 			targets = (
 				5C8AF72E2DA4F1220013728A /* SpeakIA */,
+				5C6A2C362DB0A9FD00FE3199 /* SpeakIAUnitTesting */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C6A2C352DB0A9FD00FE3199 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C8AF72D2DA4F1220013728A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,6 +203,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C6A2C332DB0A9FD00FE3199 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C8AF72B2DA4F1220013728A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,7 +219,47 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5C6A2C3D2DB0A9FD00FE3199 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C8AF72E2DA4F1220013728A /* SpeakIA */;
+			targetProxy = 5C6A2C3C2DB0A9FD00FE3199 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5C6A2C3E2DB0A9FD00FE3199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6QNXMD5AL4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiki.SpeakIAUnitTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C6A2C3F2DB0A9FD00FE3199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6QNXMD5AL4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiki.SpeakIAUnitTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5C8AF7382DA4F1220013728A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -344,6 +456,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C6A2C402DB0A9FD00FE3199 /* Build configuration list for PBXNativeTarget "SpeakIAUnitTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C6A2C3E2DB0A9FD00FE3199 /* Debug */,
+				5C6A2C3F2DB0A9FD00FE3199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5C8AF7292DA4F1220013728A /* Build configuration list for PBXProject "SpeakIA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
