@@ -18,7 +18,8 @@ jobs:
   ##    - run: fastlane build
 
   test: 
-        macos: xcode 15.2.0
+        macos:
+        xcode: 15.2.0
 
         steps: 
           - checkout
