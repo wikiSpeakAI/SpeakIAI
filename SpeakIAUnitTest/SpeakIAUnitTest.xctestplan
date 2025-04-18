@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "815D7300-5E40-49D9-8440-80D81E07E437",
+      "id" : "C3B2F319-46F3-4D2D-80FA-1CD3E609E337",
       "name" : "Configuration 1",
       "options" : {
 
@@ -15,7 +15,7 @@
     {
       "target" : {
         "containerPath" : "container:SpeakIA.xcodeproj",
-        "identifier" : "5C6A2D192DB220DE00FE3199",
+        "identifier" : "5C6A2D292DB2282400FE3199",
         "name" : "SpeakIAUnitTest"
       }
     }

@@ -2,7 +2,7 @@
 //  SpeakIAUnitTest.swift
 //  SpeakIAUnitTest
 //
-//  Created by William Brando Estrada Tepec on 4/17/25.
+//  Created by William Brando Estrada Tepec on 4/18/25.
 //
 
 import XCTest
@@ -27,7 +27,9 @@ final class SpeakIAUnitTest: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        print("we are here to test performance wito")
+        measure {
+            // Put the code you want to measure the time of here.
+        }
     }
 
 }
