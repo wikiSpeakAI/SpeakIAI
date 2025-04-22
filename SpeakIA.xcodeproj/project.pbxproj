@@ -23,6 +23,7 @@
 /* Begin PBXFileReference section */
 		5C6A2D2A2DB2282400FE3199 /* SpeakIAUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeakIAUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8AF72F2DA4F1220013728A /* SpeakIA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpeakIA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CDB69B52DB30EB500B31231 /* SpeakIA.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SpeakIA.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -32,6 +33,13 @@
 				SpeakIA.h,
 			);
 			target = 5C8AF72E2DA4F1220013728A /* SpeakIA */;
+		};
+		5CDB69F62DB3743B00B31231 /* Exceptions for "SpeakIA" folder in "SpeakIAUnitTest" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ChatDetails/View/MessagefooterView/MessageFooterView.xib,
+			);
+			target = 5C6A2D292DB2282400FE3199 /* SpeakIAUnitTest */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -45,6 +53,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				5C8AF7362DA4F1220013728A /* Exceptions for "SpeakIA" folder in "SpeakIA" target */,
+				5CDB69F62DB3743B00B31231 /* Exceptions for "SpeakIA" folder in "SpeakIAUnitTest" target */,
 			);
 			path = SpeakIA;
 			sourceTree = "<group>";
@@ -85,6 +94,11 @@
 				5C8AF72F2DA4F1220013728A /* SpeakIA.framework */,
 				5C6A2D2A2DB2282400FE3199 /* SpeakIAUnitTest.xctest */,
 			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CDB69B72DB30EB500B31231 /* Products */ = {
+			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -177,6 +191,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5C8AF7302DA4F1220013728A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5CDB69B72DB30EB500B31231 /* Products */;
+					ProjectRef = 5CDB69B52DB30EB500B31231 /* SpeakIA.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5C8AF72E2DA4F1220013728A /* SpeakIA */,
