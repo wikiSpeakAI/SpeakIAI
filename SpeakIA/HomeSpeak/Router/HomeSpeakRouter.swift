@@ -38,7 +38,6 @@ extension HomeSpeakRouter: HomeSpeakRouterProtocol {
 
         switch flow.typeMethod {
         case .chatWithAI:
-            print("dede abrir ChatListRouter navigation: ", navigation)
             let router = ChatListRouter()
             let vc = router.start(navigation: navigation)
             print("dede abrir ChatListRouter vc: ", vc)

@@ -42,14 +42,14 @@ class ChatListTableViewCell: UITableViewCell, XibInitializable {
         timeLabel.text = data.lastMessageDate
         
         //descargar imagen de perfil
-        if var imgProfile = data.avatar {
+        if data.avatar != nil {
            // avatarImgView.downLoadImgSpeakIA(urlStr: imgProfile)
         }
     }
     
     private func setupUI() {
         avatarImgView.addRoundCorners(cornerRadius: avatarImgView.bounds.width / 2)
-        var skeletonCell = SkeletonView(frame: self.frame)
+        let skeletonCell = SkeletonView(frame: self.frame)
         skeletonCell.tag = 999
         addSubview(skeletonCell)
     }

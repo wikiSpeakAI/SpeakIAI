@@ -121,7 +121,7 @@ extension ChatListViewController: ChatListTableViewDelegate {
     
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection) {
         
-        var topHeigth = constraintHeaderHeight.constant
+        let topHeigth = constraintHeaderHeight.constant
         
         if topHeigth < topViewFinalHeight + 20 {
             heigthEndScroll()

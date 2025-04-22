@@ -37,8 +37,8 @@ class ChatListRouter: RouterProtocol {
 }
 extension ChatListRouter: ChatListRouterProtocol {
     func gotoChatFlow(_ data: [UserChat]?) {
-        var router = ChatRouter(data: data)
-        var vc = router.start(navigation: navigation)
+        let router = ChatRouter(data: data)
+        let vc = router.start(navigation: navigation)
         
         navigation?.pushViewController(vc, animated: true)
     }

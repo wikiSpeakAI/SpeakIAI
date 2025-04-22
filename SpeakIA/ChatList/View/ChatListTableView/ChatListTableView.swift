@@ -100,7 +100,7 @@ extension ChatListTableView:  UITableViewDataSource {
 extension ChatListTableView : UITableViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        var delta = scrollView.contentOffset.y - lastContentOffset.y
+        let delta = scrollView.contentOffset.y - lastContentOffset.y
         print("scroll value: \(scrollView.contentOffset.y)")
         print("delta: \(delta)")
         
