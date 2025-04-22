@@ -3,8 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23094"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,17 +20,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-cq-IOY">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="L7q-cq-IOY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="7L4-2j-Nfm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="L7q-cq-IOY" secondAttribute="bottom" id="QHj-Hb-mnL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="L7q-cq-IOY" secondAttribute="trailing" id="RUG-vr-N9R"/>
-                <constraint firstItem="L7q-cq-IOY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="h5I-9r-MQ3"/>
+                <constraint firstItem="L7q-cq-IOY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7L4-2j-Nfm"/>
+                <constraint firstAttribute="bottom" secondItem="L7q-cq-IOY" secondAttribute="bottom" id="QHj-Hb-mnL"/>
+                <constraint firstAttribute="trailing" secondItem="L7q-cq-IOY" secondAttribute="trailing" id="RUG-vr-N9R"/>
+                <constraint firstItem="L7q-cq-IOY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h5I-9r-MQ3"/>
             </constraints>
             <point key="canvasLocation" x="77" y="20"/>
         </view>
