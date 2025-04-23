@@ -37,7 +37,7 @@ final class SpeakIAUnitTest: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        print("Estamos haciendo pruebas unitarias")
+    
 
         XCTAssertTrue(true, "Esta prueba siempre pasa porque 'true' es verdadero.")
     }
