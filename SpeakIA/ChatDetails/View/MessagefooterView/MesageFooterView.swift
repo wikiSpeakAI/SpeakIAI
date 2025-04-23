@@ -65,7 +65,7 @@ class MesageFooterView: UIView {
         let size = mesaggeTextView.sizeThatFits(fittingSize)
 
         let maxHeight: CGFloat = 150 // or any max you want
-        let newHeight = min(size.height + 18.0, maxHeight)
+        let newHeight = min(size.height + 9.0, maxHeight)
 
         heigthTextView.constant = newHeight
         layoutIfNeeded()
