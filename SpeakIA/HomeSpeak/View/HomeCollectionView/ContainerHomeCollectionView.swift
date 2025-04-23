@@ -90,7 +90,7 @@ extension ContainerHomeCollectionView : UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("se dio clic a", dataSource?[indexPath.row].title)
+        print("se dio clic a", dataSource?[indexPath.row].title ?? "")
         guard let data = dataSource?[indexPath.row] else {return}
         delegate?.didSelectFlow(flow: data)
     }
@@ -108,7 +108,7 @@ extension ContainerHomeCollectionView: UICollectionViewDelegateFlowLayout {
         let padding: CGFloat = 10 // espacio entre celdas
         let totalPadding = padding * (itemsPerRow + 1)
         let availableWidth = collectionView.frame.width - totalPadding
-        var widthPerItem = availableWidth / itemsPerRow
+        let widthPerItem = availableWidth / itemsPerRow
         return CGSize(width: widthPerItem - 33, height: widthPerItem) // rectangulo
     }
     

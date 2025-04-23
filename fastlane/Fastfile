@@ -21,8 +21,10 @@ platform :ios do
     scan(
       scheme: "SpeakIA",
       only_testing: ["SpeakIAUnitTest"],
+      destination: "platform=iOS Simulator,name=iPhone 16 Pro",
       clean: true,
-      destination: "platform=iOS Simulator,name=iPhone 16 Pro"
+      skip_build: false,
+      fail_build: true
     )
     # add actions here: https://docs.fastlane.tools/actions
   end
