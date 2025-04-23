@@ -11,12 +11,14 @@ protocol ChatViewProtocol: AnyObject {
 }
 
 class ChatViewController: BaseController, ViewProtocol {
-
+    
     @IBOutlet private weak var contentCollection: UIView!
     var presenter: ChatPresenterProtocol?
     var dataSource: [UserChat]?
     var numItemsbyRow: CGFloat = 1
-    
+    var footerBottomConstraint: NSLayoutConstraint?
+    var heigthKeyboard: CGFloat?
+
     private struct Constants {
         static var cellIdentifier: String { ChatCollectionViewCell.reuseIdentifier }
     }
@@ -32,17 +34,56 @@ class ChatViewController: BaseController, ViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let userInfo = notification.userInfo,
+           let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+            let keyboardHeight = keyboardFrame.height
+            print("Keyboard height: \(keyboardHeight)")
+            heigthKeyboard = keyboardHeight
+            toMoveFooter(heigth: -keyboardHeight)
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         setupUI()
+        addObservers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeObserves()
     }
     
     func setupUI() {
-
-        contentCollection.addSubView(viewChild: contentTableView)
+        contentCollection.addSubViewToBottom(viewChild: footerSendMessage)
+        contentCollection.addSubviewOverTo(parnerView: footerSendMessage, childView: contentTableView)
+        
+        footerBottomConstraint = footerSendMessage.bottomAnchor.constraint(equalTo: contentCollection.bottomAnchor)
+        footerBottomConstraint?.isActive = true
+    }
+    
+    func addObservers() {
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func removeObserves(){
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        // footer return to init position
+        print("Se escondera el teclado: ", heigthKeyboard as Any )
+        toMoveFooter(heigth:  0.0)
     }
 
     
@@ -60,12 +101,29 @@ class ChatViewController: BaseController, ViewProtocol {
         return contentTableView
     }()
     
+    lazy var footerSendMessage = {
+        var footer = MesageFooterView()
+        footer.delegate = self
+        footer.translatesAutoresizingMaskIntoConstraints = false
+        return footer
+    }()
+    
+    
     // cuando gira la pantalla volvemos a recargar el tableview
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
         coordinator.animate(alongsideTransition: nil) { _ in
             self.contentTableView.tableView.reloadData()
+        }
+    }
+    
+    // MARK: Funtions Logic
+    
+    func toMoveFooter(heigth : CGFloat) {
+        footerBottomConstraint?.constant = heigth
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -89,34 +147,13 @@ extension ChatViewController: UICollectionViewDataSource {
 
 }
 
-extension ChatViewController : UICollectionViewDelegateFlowLayout {
-    /* func collectionView(_ collectionView: UICollectionView,
-     layout collectionViewLayout: UICollectionViewLayout,
-     sizeForItemAt indexPath: IndexPath) -> CGSize {
-     
-     var size = CGSizeZero
-     let width = collectionView.bounds.width
-     if let dummyCell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? ChatCollectionViewCell  {
-     
-     dummyCell.setData(data: nil)
-     dummyCell.setNeedsLayout()
-     dummyCell.layoutIfNeeded()
-     size = dummyCell.contentView.systemLayoutSizeFitting(
-     CGSize(width: width, height: UIView.layoutFittingCompressedSize.height)
-     )
-     
-     }
-     
-     
-     
-     
-     
-     return size
-     }*/
-    
-    
+extension ChatViewController : MesageFooterViewDelegate {
 
-
+    
+    func sendMessage(msg: String?) {
+        //login send message
+        
+    }
 }
 
 extension ChatViewController: ChatViewProtocol {
