@@ -21,7 +21,7 @@ platform :ios do
     scan(
       scheme: "SpeakIA",
       only_testing: ["SpeakIAUnitTest"],
-      destination: "platform=iOS Simulator,name=iPhone 16 Pro"
+      destination: "platform=iOS Simulator,name=iPhone 16 Pro",
       clean: true,
       skip_build: false,
       fail_build: true
