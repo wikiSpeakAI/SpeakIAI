@@ -56,11 +56,11 @@ class MessagerTableViewCell: UITableViewCell, XibInitializable {
         stackMessageView.translatesAutoresizingMaskIntoConstraints = false
     }*/
     
-    func loadData(data: UserChat) {
+    func loadData(data: MessagesModel?) {
         print("method first")
-        self.messagerLabel.text = data.name
+        self.messagerLabel.text = data?.msg
         
-        if Constants.currentId == data.id {
+        if Constants.currentId == data?.id {
             constraintsLeft.constant = UIScreen.main.bounds.width * 1/3
             constraintsRigth.constant = 10
             contentMessageView.backgroundColor = .lightGray.withAlphaComponent(0.5)
@@ -73,11 +73,11 @@ class MessagerTableViewCell: UITableViewCell, XibInitializable {
             messengeSeenStackView.alignment = .leading
         }
         
-        if let isTranslate = data.isTyping, isTranslate  {
+        if  ((data?.isTralated) != nil)  {
             separatorView.isHidden = false
             starSpinner()
             
-            guard let translate = data.lastMessageDate else { return }
+            guard let translate = data?.translate else { return }
             messageTranslateLbl.text = translate
         } else {
             stopSpinner()

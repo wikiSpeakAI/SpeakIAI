@@ -13,12 +13,12 @@ class ChatPresenter: PresenterProtocol {
     var router: ChatRouterProtocol?
     var interactor: ChatInteractorProtocol?
     
-    var dummyUser: [UserChat] = [
-        UserChat(id: "1",name: "willy", avatar: "https://via.placeholder.com/150"),
-        UserChat(id: "2",name: "Este es un ejemplo de mensaje para pruebas de que tenemos un llenado de datos correctamente para cada celda y que se muestre correctamente.", avatar: "https://via.placeholder.com/150"),
-        UserChat(id: "3",name: "willy", avatar: "https://via.placeholder.com/150"),
-        UserChat(id: "4",name: "willy", avatar: "https://via.placeholder.com/150"),
-        UserChat(id: "5",name: "willy", avatar: "https://via.placeholder.com/150"),
+    var dummyUser: [MessagesModel] = [
+        MessagesModel(id: "0", msg: "Este es un ejemplo de mensaje", translate: nil, isTralated: false, date: "3 febrero", isSeen: false, typeMsg: .generic),
+        MessagesModel(id: "0", msg: "Este es un ejemplo de mensaje", translate: nil, isTralated: false, date: "3 febrero", isSeen: false, typeMsg: .generic),
+        MessagesModel(id: "0", msg: "Este es un ejemplo de mensaje este es mas largo que todos los otros mensajes", translate: nil, isTralated: false, date: "3 febrero", isSeen: false, typeMsg: .generic),
+        MessagesModel(id: "0", msg: "Este es un ejemplo de mensaje", translate: nil, isTralated: false, date: "3 febrero", isSeen: false, typeMsg: .generic),
+        MessagesModel(id: "0", msg: "Este es un ejemplo de mensaje", translate: nil, isTralated: false, date: "3 febrero", isSeen: false, typeMsg: .generic)
     ]
     
     deinit {

@@ -59,7 +59,7 @@ extension MessagerContentCollectionView: UICollectionViewDelegate, UICollectionV
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentify, for: indexPath) as? ChatCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.setData(data: dataSource?[indexPath.row])
+        cell.setData(data: nil)
         return cell
     }
 }

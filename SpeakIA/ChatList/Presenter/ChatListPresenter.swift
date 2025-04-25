@@ -6,7 +6,7 @@
 //
 import UIKit
 protocol ChatListPresenterProtocol: AnyObject {
-    func selectedChat(userChat: [UserChat]?)
+    func selectedChat(userChat: [MessagesModel]?)
 }
 
 class ChatListPresenter: PresenterProtocol {
@@ -23,7 +23,7 @@ class ChatListPresenter: PresenterProtocol {
 
 extension ChatListPresenter: ChatListPresenterProtocol {
     
-    func selectedChat(userChat: [UserChat]?) {
+    func selectedChat(userChat: [MessagesModel]?) {
         router?.gotoChatFlow(userChat)
     }
 }
