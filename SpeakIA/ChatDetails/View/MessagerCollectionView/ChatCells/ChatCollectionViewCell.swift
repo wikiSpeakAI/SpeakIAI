@@ -57,9 +57,9 @@ class ChatCollectionViewCell: UICollectionViewCell, XibInitializable {
     }
     
     
-    func setData(data: UserChat?) {
+    func setData(data: MessagesModel?) {
         guard let data = data else { return }
-        messageLabel.text = data.name
+        messageLabel.text = data.msg
         
         constraintsRight.constant = UIScreen.main.bounds.width * 1/3
         constraintsRight.isActive = true

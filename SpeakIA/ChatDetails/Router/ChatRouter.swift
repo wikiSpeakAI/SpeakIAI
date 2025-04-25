@@ -13,9 +13,9 @@ protocol ChatRouterProtocol: AnyObject {
 class ChatRouter: RouterProtocol {
     weak var rootView: UIViewController?
     var navigation: UINavigationController?
-    var data: [UserChat]?
+    var data: [MessagesModel]?
     
-    init(data: [UserChat]? = nil) {
+    init(data: [MessagesModel]? = nil) {
         self.data = data
     }
     

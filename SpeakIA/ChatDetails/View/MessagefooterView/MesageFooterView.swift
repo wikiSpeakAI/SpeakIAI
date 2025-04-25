@@ -44,9 +44,8 @@ class MesageFooterView: UIView {
         
         textContentView.addRoundCorners(cornerRadius: 20)
         
-       // mesaggeTextView.isScrollEnabled = false
         mesaggeTextView.delegate = self
-        
+        addedEvents()
     }
     
 
@@ -71,6 +70,18 @@ class MesageFooterView: UIView {
         layoutIfNeeded()
     }
     
+    func addedEvents() {
+        sendMesaggeBtn.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didSelectSendMsg) )
+        sendMesaggeBtn.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func didSelectSendMsg() {
+        //To validate if message no empty
+        guard !mesaggeTextView.text.isEmpty else {return}
+        delegate?.sendMessage(msg: mesaggeTextView.text)
+        
+    }
 }
 extension MesageFooterView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {

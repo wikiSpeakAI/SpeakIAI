@@ -102,7 +102,7 @@ extension ChatListViewController: ChatListViewProtocol {}
 
 
 extension ChatListViewController: ChatListTableViewDelegate {
-    func chatDidSelected(dta: [UserChat]) {
+    func chatDidSelected(dta: [MessagesModel]?) {
         presenter?.selectedChat(userChat: dta)
     }
     

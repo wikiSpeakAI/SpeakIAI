@@ -7,14 +7,14 @@
 import UIKit
 
 protocol ChatViewProtocol: AnyObject {
-    func loadData(userData: [UserChat])
+    func loadData(userData: [MessagesModel])
 }
 
 class ChatViewController: BaseController, ViewProtocol {
     
     @IBOutlet private weak var contentCollection: UIView!
     var presenter: ChatPresenterProtocol?
-    var dataSource: [UserChat]?
+    var dataSource: [MessagesModel]?
     var numItemsbyRow: CGFloat = 1
     var footerBottomConstraint: NSLayoutConstraint?
     var heigthKeyboard: CGFloat?
@@ -50,6 +50,7 @@ class ChatViewController: BaseController, ViewProtocol {
         super.viewDidLoad()
         setupUI()
         addObservers()
+        presenter?.fetchData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -152,13 +153,17 @@ extension ChatViewController : MesageFooterViewDelegate {
     
     func sendMessage(msg: String?) {
         //login send message
+        guard let msgToSend = msg else { return  }
+        print("mesaje recibido: ", msgToSend)
+        
         
     }
 }
 
 extension ChatViewController: ChatViewProtocol {
-    func loadData(userData: [UserChat]) {
+    func loadData(userData: [MessagesModel]) {
         dataSource = userData
+        contentTableView.dataSource = userData
     }
     
     

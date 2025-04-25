@@ -18,7 +18,7 @@ protocol ChatListTableViewDelegate :AnyObject {
     func innerTableViewDidScroll(withDistance scrollDistance: CGFloat)
     func innerTableViewScrollEnded(withScrollDirection scrollDirection: DragDirection)
     
-    func chatDidSelected(dta : [UserChat])
+    func chatDidSelected(dta : [MessagesModel]?)
 }
 
 
@@ -89,7 +89,7 @@ extension ChatListTableView:  UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.chatDidSelected(dta: dataSource)
+        delegate?.chatDidSelected(dta: nil)
     }
     
     
